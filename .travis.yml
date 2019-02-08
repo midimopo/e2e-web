@@ -4,6 +4,9 @@ node_js:
 os: osx
 osx_image: xcode9.2
 
+before_install:
+  - sudo Xvfb :99 -ac -screen 0 1024x768x8; echo ok
+
 install:
   - npm install -g --save-dev nightwatch
 
