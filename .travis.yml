@@ -7,9 +7,6 @@ osx_image: xcode9.2
 addons:
   chrome: beta
 
-services:
-  - xvfb
-
 before_install:
   - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 
