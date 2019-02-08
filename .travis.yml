@@ -7,6 +7,9 @@ osx_image: xcode9.2
 addons:
   chrome: beta
 
+services:
+  - xvfb
+
 before_install:
   - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 
@@ -14,5 +17,4 @@ install:
   - npm install -g --save-dev nightwatch
 
 script:
-  - xvfb-run --server-args="-screen 0 1024x768x24" make test
   - nightwatch --config nightwatch.json
