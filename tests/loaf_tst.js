@@ -15,20 +15,12 @@ module.exports = {
         // Verify title name
         browser.verify.title('Home | The Perfect Loaf')
 
-        browser.windowSize('current', function(result) {
-             console.log(result.value);
-        });
-
         // Check if top menu bar is visible on the page. If it is not then maximise the window
         browser.isVisible('#menu-primary-2', function(result) {
             if (result.value == false) {
                 browser.maximizeWindow()
             }
         })
-
-        browser.windowSize('current', function(result) {
-             console.log(result.value);
-         });
 
         // Wait for 2 seconds
         browser.pause(2000)
