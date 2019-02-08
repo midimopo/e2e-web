@@ -8,7 +8,7 @@ addons:
   chrome: beta
 
 before_install:
-  - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --window-size=2560,1600 --remote-debugging-port=9222 http://localhost &"
+  - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --window-size=1920,1080 --remote-debugging-port=9222 http://localhost &"
 
 install:
   - npm install -g --save-dev nightwatch
