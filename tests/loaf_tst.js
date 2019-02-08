@@ -22,6 +22,9 @@ module.exports = {
             }
         })
 
+        // Wait for 2 seconds
+        browser.pause(2000)
+
         // Verify that top menu bar item #3 is visible on screen
         browser.verify.visible('#menu-primary-2 > li:nth-child(3)')
 
