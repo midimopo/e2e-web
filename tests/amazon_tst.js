@@ -3,13 +3,17 @@ module.exports = {
     /* The purpose of this test is to search in amazon.co.uk website for "cow milk" and verify that the results contain
     this exact same phrase"
     */
-            browser
+
+    const searchBar = 'input[type=text]',
+          submitButton = 'input[type=submit]'
+          
+        browser
             .url('https://www.amazon.co.uk/')
             .waitForElementVisible('body')
-            .verify.elementPresent('input[type=text]')
-            .setValue('input[type=text]', 'cow milk')
-            .waitForElementVisible('input[type=submit]')
-            .click('input[type=submit]')
+            .verify.elementPresent(searchBar)
+            .setValue(searchBar, 'cow milk')
+            .waitForElementVisible(submitButton)
+            .click(submitButton)
             .pause(2000)
             .assert.containsText('#main', 'cow milk')
             .end();
